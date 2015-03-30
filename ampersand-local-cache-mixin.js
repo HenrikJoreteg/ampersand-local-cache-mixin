@@ -35,7 +35,6 @@ module.exports = {
     return data
   },
   readFromStorage: function () {
-    var self = this
     if (!storage.support()) {
       return false
     }
@@ -45,18 +44,23 @@ module.exports = {
     })
 
     if (!retrieved.data) {
+      this.deferTrigger('empty')
       return false
     }
 
     this.set(this.parseFromStorage(retrieved.data))
     if (retrieved.stale) {
-      // we do this so host object can call
-      // `initStorage` before registering `stale`
-      // handler (looks more sane as user)
-      setTimeout(function () {
-        self.trigger('stale')
-      }, 0)
+      this.deferTrigger('stale')
     }
     return true
+  },
+  deferTrigger: function (event) {
+    // we do this so host object can call
+    // `initStorage` before registering `stale`
+    // handler (looks more sane as user)
+    var self = this
+    setTimeout(function () {
+      self.trigger(event)
+    }, 0)
   }
 }

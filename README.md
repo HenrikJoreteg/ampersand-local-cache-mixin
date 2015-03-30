@@ -42,8 +42,10 @@ module.exports = Model.extend(cacheMixin, {
     initialize: function () {
         // sets up our mixin and reads if it has it
         this.initStorage();
-        // listen for and handle 'stale' events
-        this.on('stale', this.fetch, this);
+
+        // listen to `stale` and `empty` events
+        // fetch on both
+        this.on('stale empty', this.fetch, this)
 
         // **note: you have to tell it when to write to storage**
         // otherwise nothing ever gets cached.
