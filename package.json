@@ -1,0 +1,35 @@
+{
+  "name": "ampersand-local-cache-mixin",
+  "description": "Only fetch when your data is old or stale. Easily configurable localStorage cache for ampersand & backbone state objects, models, and collections.",
+  "version": "0.0.0",
+  "author": "Henrik Joreteg <henrik@andyet.net>",
+  "bugs": {
+    "url": "https://github.com/henrikjoreteg/ampersand-local-cache-mixin/issues"
+  },
+  "dependencies": {
+    "lodash.isnumber": "^3.0.1",
+    "lodash.isstring": "^3.0.1",
+    "lodash.merge": "^3.1.0",
+    "lodash.pick": "^3.1.0",
+    "lodash.result": "^3.0.0"
+  },
+  "devDependencies": {
+    "fixpack": "^2.2.0",
+    "standard": "^3.3.0"
+  },
+  "homepage": "https://github.com/henrikjoreteg/ampersand-local-cache-mixin",
+  "keywords": [
+    "ampersand",
+    "caching",
+    "localstorage"
+  ],
+  "license": "MIT",
+  "main": "ampersand-local-cache-mixin.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/henrikjoreteg/ampersand-local-cache-mixin"
+  },
+  "scripts": {
+    "test": "fixpack && standard"
+  }
+}
