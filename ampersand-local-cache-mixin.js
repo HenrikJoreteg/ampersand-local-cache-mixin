@@ -29,7 +29,7 @@ module.exports = {
     storage.write(result(this, 'storageKey'), this.serializeToStorage())
   },
   serializeToStorage: function () {
-    return this.getAttributes({props: true})
+    return this.toJSON()
   },
   parseFromStorage: function (data) {
     return data
