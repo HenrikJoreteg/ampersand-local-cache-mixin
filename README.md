@@ -62,8 +62,12 @@ There are two overwriteable methods that determine what gets stored and retrieve
 Here's how they look by default:
 
 ```js
+  // note that by default child collections are
+  // not persisted. If you want to persist those
+  // too, change the `getAttributes` line to be
+  // `return this.toJSON()`
   serializeToStorage: function () {
-    return this.toJSON()
+    return this.getAttributes({props: true})
   },
   parseFromStorage: function (data) {
     return data
