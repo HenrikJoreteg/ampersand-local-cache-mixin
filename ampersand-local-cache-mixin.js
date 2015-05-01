@@ -3,7 +3,7 @@ var isString = require('lodash.isstring')
 var result = require('lodash.result')
 var merge = require('lodash.merge')
 var pick = require('lodash.pick')
-var storage = require('./localStorage-ttls')
+var storage = require('./localstorage-ttls')
 
 module.exports = {
   initStorage: function (opts) {
