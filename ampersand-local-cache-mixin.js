@@ -14,7 +14,7 @@ module.exports = {
     if (opts) {
       merge(this, pick(opts, ['storageKey', 'ttl', 'tts']))
     }
-    if (!isString(this.storageKey) || !isNumber(this.ttl)) {
+    if (this.storageKey == null || !isNumber(this.ttl)) {
       throw Error('Must have `storageKey` and `ttl` options set')
     }
     if (!isNumber(this.tts)) {
